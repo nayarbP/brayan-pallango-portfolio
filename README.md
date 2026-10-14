@@ -1,22 +1,37 @@
-# Portafolio — Brayan Pallango
+# Brayan Pallango — Full Stack Portfolio
 
-Monorepo con **Next.js** (frontend) y **NestJS** (API) con datos del CV, diseño en colores pastel y animaciones con Framer Motion.
+Monorepo with **Next.js** (frontend) and **NestJS** (API).
 
-## Requisitos
+## Live sections
 
-- Node.js 20+
+- Profile, experience, projects, skills, certifications, education, contact
+- **GitHub activity** (repos, contributions, stars, recent events)
+- **CV download** (PDF)
 
-## Desarrollo
+## Repositories
+
+- Project: [github.com/nayarbP/brayan-pallango-portfolio](https://github.com/nayarbP/brayan-pallango-portfolio)
+- Profile README: [github.com/nayarbP/nayarbP](https://github.com/nayarbP/nayarbP)
+
+## Development
 
 ```bash
 npm install
+cp backend/.env.example backend/.env
+# Set GITHUB_TOKEN and GITHUB_USERNAME in backend/.env
 npm run dev
 ```
 
-- Web: [http://localhost:3000](http://localhost:3000)
-- API: [http://localhost:4000/api/portfolio](http://localhost:4000/api/portfolio)
+- Web: http://localhost:3000
+- API: http://localhost:4000/api/portfolio
+- GitHub stats: http://localhost:4000/api/github/stats
 
-## Estructura
+## Environment variables (backend)
 
-- `frontend/` — Next.js + Tailwind + Framer Motion
-- `backend/` — NestJS con endpoints `/api/portfolio/*`
+| Variable | Description |
+|---|---|
+| `GITHUB_USERNAME` | GitHub login (default `nayarbP`) |
+| `GITHUB_TOKEN` | PAT with `read:user` and repo read scopes for stats |
+| `PORT` | API port (default `4000`) |
+
+Never commit `backend/.env`.
