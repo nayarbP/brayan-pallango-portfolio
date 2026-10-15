@@ -18,7 +18,9 @@ In **Project → Settings → Environment Variables**, add:
 | `GITHUB_USERNAME` | `nayarbP` |
 | `GITHUB_TOKEN` | Your GitHub PAT (read-only is enough for stats) |
 
-Do **not** set `NEXT_PUBLIC_API_URL` on Vercel (the app uses built-in `/api` routes).
+Apply variables to **Production**, **Preview**, and **Development**, then **Redeploy**.
+
+Do **not** set `NEXT_PUBLIC_API_URL` on Vercel (unless you host a separate Nest API).
 
 ## 3. Deploy
 

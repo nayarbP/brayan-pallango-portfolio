@@ -44,11 +44,14 @@ export function GitHubStatsSection({
   if (!stats) {
     return (
       <section id="github" className="scroll-mt-28 py-16">
-        <div className="mx-auto max-w-6xl px-4 text-center text-[var(--text-secondary)] lg:px-6">
-          GitHub stats are temporarily unavailable. Restart the API with{' '}
-          <code className="text-[var(--accent-cyan-bright)]">npm run dev</code>{' '}
-          and ensure <code className="text-[var(--accent-cyan-bright)]">backend/.env</code>{' '}
-          contains a valid <code className="text-[var(--accent-cyan-bright)]">GITHUB_TOKEN</code>.
+        <div className="mx-auto max-w-3xl px-4 text-center text-[var(--text-secondary)] lg:px-6">
+          GitHub stats are temporarily unavailable. On{' '}
+          <strong>Vercel</strong>, open{' '}
+          <strong>Project → Settings → Environment Variables</strong> and add{' '}
+          <code className="text-[var(--accent-cyan-bright)]">GITHUB_USERNAME</code>{' '}
+          and <code className="text-[var(--accent-cyan-bright)]">GITHUB_TOKEN</code>
+          , then redeploy. For local dev, set them in{' '}
+          <code className="text-[var(--accent-cyan-bright)]">frontend/.env.local</code>.
         </div>
       </section>
     );
