@@ -234,47 +234,6 @@ export function PortfolioSections({ data }: { data: PortfolioData }) {
           </FadeIn>
         </div>
       </section>
-
-      <section id="contact" className="scroll-mt-28 py-16 pb-24">
-        <div className="mx-auto max-w-6xl px-4 lg:px-6">
-          <SectionHeading
-            eyebrow="Let's connect"
-            title="Contact"
-            description="Have a project or Full Stack opening? Reach out."
-          />
-          <FadeIn>
-            <TechHoverCard className="mx-auto max-w-3xl text-center">
-              <p className="text-[var(--text-secondary)]">
-                {data.profile.location}
-              </p>
-              <a
-                href={`mailto:${data.profile.email}`}
-                className="mt-4 inline-block text-2xl font-semibold text-[var(--accent-cyan-bright)] hover:underline"
-              >
-                {data.profile.email}
-              </a>
-              <div className="mt-6 flex flex-wrap justify-center gap-3">
-                <a
-                  href={data.profile.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full bg-[#0A66C2] px-5 py-2.5 text-sm font-medium text-white"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href={data.profile.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full bg-gradient-to-r from-cyan-500 to-violet-500 px-5 py-2.5 text-sm font-medium text-slate-950"
-                >
-                  GitHub
-                </a>
-              </div>
-            </TechHoverCard>
-          </FadeIn>
-        </div>
-      </section>
     </>
   );
 }

@@ -2,6 +2,7 @@ import { Footer } from '@/components/Footer';
 import { TechBackground } from '@/components/TechBackground';
 import { Hero } from '@/components/Hero';
 import { Navbar } from '@/components/Navbar';
+import { ContactSection } from '@/components/ContactSection';
 import { GitHubStatsSection } from '@/components/GitHubStatsSection';
 import { PortfolioSections } from '@/components/PortfolioSections';
 import { ResumeSection } from '@/components/ResumeSection';
@@ -20,8 +21,9 @@ export async function PortfolioContent() {
       <main>
         <Hero profile={data.profile} />
         <PortfolioSections data={data} />
-        {githubStats ? <GitHubStatsSection stats={githubStats} /> : null}
+        <GitHubStatsSection stats={githubStats} />
         <ResumeSection resume={data.resume} name={data.profile.name} />
+        <ContactSection profile={data.profile} />
       </main>
       <Footer name={data.profile.name} />
     </>

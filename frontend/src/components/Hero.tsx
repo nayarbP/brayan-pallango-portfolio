@@ -2,6 +2,7 @@
 
 import { TechHoverCard } from '@/components/TechHoverCard';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import type { PortfolioData } from '@/lib/types';
 import { HiOutlineMail } from 'react-icons/hi';
 import { FaGithub, FaLinkedin, FaMapMarkerAlt } from 'react-icons/fa';
@@ -94,9 +95,16 @@ export function Hero({ profile }: { profile: PortfolioData['profile'] }) {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="relative mx-auto w-full max-w-md"
         >
-          <TechHoverCard>
-            <div className="mb-6 flex h-24 w-24 items-center justify-center rounded-2xl border border-cyan-400/40 bg-gradient-to-br from-cyan-500/25 to-violet-500/25 font-mono text-3xl font-bold text-[var(--text-primary)]">
-              BP
+          <TechHoverCard className="flex flex-col items-center text-center">
+            <div className="relative mb-6 aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-2xl border border-cyan-400/40 bg-white shadow-[0_0_24px_rgba(34,211,238,0.15)]">
+              <Image
+                src="/profile/brayan-pallango.jpg"
+                alt="Brayan Rubén Pallango Plasencia"
+                fill
+                priority
+                sizes="280px"
+                className="object-contain object-center"
+              />
             </div>
             <h2 className="text-xl font-semibold text-[var(--text-primary)]">
               {profile.name}
@@ -106,7 +114,7 @@ export function Hero({ profile }: { profile: PortfolioData['profile'] }) {
             </p>
             <a
               href={`mailto:${profile.email}`}
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[var(--accent-cyan-bright)] hover:underline"
+              className="mt-6 inline-flex items-center justify-center gap-2 text-sm font-medium text-[var(--accent-cyan-bright)] hover:underline"
             >
               <HiOutlineMail className="icon-accent text-lg" />
               {profile.email}

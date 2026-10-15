@@ -1,12 +1,10 @@
+import { getApiBase } from './api-base';
 import { portfolioFallback } from './portfolio.fallback';
 import type { GitHubStats, PortfolioData } from './types';
 
-const API_BASE =
-  process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000/api';
-
 export async function fetchPortfolio(): Promise<PortfolioData> {
   try {
-    const res = await fetch(`${API_BASE}/portfolio`, {
+    const res = await fetch(`${getApiBase()}/portfolio`, {
       cache: 'no-store',
     });
     if (!res.ok) {
@@ -20,7 +18,7 @@ export async function fetchPortfolio(): Promise<PortfolioData> {
 
 export async function fetchGitHubStats(): Promise<GitHubStats | null> {
   try {
-    const res = await fetch(`${API_BASE}/github/stats`, {
+    const res = await fetch(`${getApiBase()}/github/stats`, {
       cache: 'no-store',
     });
     if (!res.ok) return null;

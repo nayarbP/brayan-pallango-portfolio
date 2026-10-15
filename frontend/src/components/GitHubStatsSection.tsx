@@ -36,7 +36,24 @@ function StatCard({
   );
 }
 
-export function GitHubStatsSection({ stats }: { stats: GitHubStats }) {
+export function GitHubStatsSection({
+  stats,
+}: {
+  stats: GitHubStats | null;
+}) {
+  if (!stats) {
+    return (
+      <section id="github" className="scroll-mt-28 py-16">
+        <div className="mx-auto max-w-6xl px-4 text-center text-[var(--text-secondary)] lg:px-6">
+          GitHub stats are temporarily unavailable. Restart the API with{' '}
+          <code className="text-[var(--accent-cyan-bright)]">npm run dev</code>{' '}
+          and ensure <code className="text-[var(--accent-cyan-bright)]">backend/.env</code>{' '}
+          contains a valid <code className="text-[var(--accent-cyan-bright)]">GITHUB_TOKEN</code>.
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="github" className="scroll-mt-28 py-16">
       <div className="mx-auto max-w-6xl px-4 lg:px-6">
